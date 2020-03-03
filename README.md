@@ -1,9 +1,22 @@
-# <center>《机器人操作系统入门》课程代码示例</center>
+# <center>《软件开发平台与应用-机器人操作系统编程技术》</center>
 
 ---
 
 ## 前言
-欢迎来到中国大学MOOC---[**《机器人操作系统入门》**](https://www.icourse163.org/)课程，本ROS软件包是课程的代码示例，课程中使用的例子均出自本代码包。除了代码包，课程还提供[讲义](https://sychaichangkun.gitbooks.io/ros-tutorial-icourse163/content/)，欢迎各位朋友下载、学习和分享。
+
+欢迎来到中国科学院软件研究所和南京理工大学合办的---[**《软件开发平台与应用-机器人操作系统编程技术》**](https://github.com/YunxiangLuo/ros)课程ROS部分课程代码示例[软件包](https://github.com/YunxiangLuo/roscode)，欢迎南京理工大学的同学们下载、学习和分享。
+
+## 课程大纲
+[第1章 Linux编程基础](https://github.com/YunxiangLuo/ros/tree/master/chapter1)
+第2章 Pyhton编程基础
+[第3章 ROS系统入门](https://github.com/YunxiangLuo/ros/tree/master/chapter3)
+[第4章 ROS工程结构和通信机制](https://github.com/YunxiangLuo/ros/tree/master/chapter4)
+[第5章 ROS⼯具](https://github.com/YunxiangLuo/ros/tree/master/chapter5)
+[第6章 ROSPY](https://github.com/YunxiangLuo/ros/tree/master/chapter6)
+[第7章 TF和URDF](https://github.com/YunxiangLuo/ros/tree/master/chapter7)
+[第8章 SLAM和导航基础](https://github.com/YunxiangLuo/ros/tree/master/chapter8)
+[第9章 机械臂](https://github.com/YunxiangLuo/ros/tree/master/chapter9)
+第10章 深度学习
 
 本示例包含了XBot机器人和中科院软件博物馆仿真、ROS通信示例程序、导航与SLAM功能演示，在每个软件包下都有相应的功能介绍。
 
@@ -11,10 +24,9 @@
 
 如果你遇到任何问题，可以在Github上方的issues栏目中提问，我们课程团队会耐心回答。本示例将**长期维护**，**不断更新**，如果你认可我们的工作，请点击右上角的**star**按钮，您的鼓励是我们的动力。
 
-
 ---
 ## 示例介绍
-本仓库为ROS入门教程的代码示例，包括以下ROS软件包:
+以下仓库为ROS部分的代码示例，包括以下ROS软件包:
 
 | 软件包 | 内容 |
 | :--- | :----: |
@@ -33,7 +45,6 @@
 | **robot_orbslam2_demo** | ORB_SLAM2的演示 |
 | **ros_academy_for_beginners** | Metapacakge示例，依赖了本仓库所有的pacakge |
 
-
 ---
 
 ## 下载和编译
@@ -41,13 +52,14 @@
 1. 克隆或下载ROS-Academy-for-Beginners教学包到工作空间的`/src`目录下，例如 `~/catkin_ws/src`
 ```sh
 $ cd ~/catkin_ws/src
-$ git clone https://github.com/DroidAITech/ROS-Academy-for-Beginners.git
+$ git clone --branch fix_cartographer https://github.com/DroidAITech/ROS-Academy-for-Beginners.git
 ```
 
 2. 安装教学包所需的依赖
 ```sh
 $ cd ~/catkin_ws
-$ rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
+$ rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y  
+# 由于国内防火墙原因，rosdep2020年初无法访问，学生需要手动安装依赖`sudo apt-get install ros-kinetic-包名`
 ```
 
 3. 编译并刷新环境
